@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing the colors</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <div class="container text-center my-5">
+        <button onclick="first()">First</button>
+        <button onclick="red()" class="btn btn-danger demo1">Red</button>
+        <button onclick="green()" class="btn btn-success demo1">Green</button>
+        <button onclick="orange()" class="btn demo">Orange</button>
+        <button onclick="yellow()" class="btn btn-warning demo1">Yellow</button>
+        <button onclick="black()" class="btn btn-dark demo1">Black</button>
+        <div id="circle" class="main">
+        </div>
+    </div>
+    <script>
+
+        function red() {
+            document.getElementById("circle").style.backgroundColor = "red";
+        }
+        function green() {
+            document.getElementById("circle").style.backgroundColor = "green";
+        }
+        function orange() {
+            document.getElementById("circle").style.backgroundColor = "orange";
+        }
+        function yellow() {
+            document.getElementById("circle").style.backgroundColor = "yellow";
+        }
+        function black() {
+            document.getElementById("circle").style.backgroundColor = "black";
+        }
+        function first() {
+            document.getElementById("circle").style.backgroundColor = "white";
+        }
+
+    </script>
+</body>
+
+</html>

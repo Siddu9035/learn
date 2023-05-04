@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <title>change of colors</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center my-5">
+            <button id="button-red" class="btn btn-danger demo1">Red</button>
+            <button id="button-green" class="btn btn-success demo1">Green</button>
+            <button id="button-orange" class="btn demo">orange</button>
+            <button id="button-yellow" class="btn btn-warning demo1">yellow</button>
+            <button id="button-blue" class="btn btn-primary demo1">Blue</button>
+        </div>
+        <div id="circle" class="main"></div>
+    </div>
+    <script>
+
+        const circle = document.getElementById("circle");
+
+        const buttons = document.querySelectorAll("button");
+
+        const defaultColor = "#000000";
+
+        const colors = ["red", "green", "orange", "yellow", "blue"];
+
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", () => {
+                circle.style.backgroundColor = colors[i] || defaultColor;;
+            });
+        }
+
+    </script>
+</body>
+
+</html>

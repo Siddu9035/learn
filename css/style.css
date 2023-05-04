@@ -1,0 +1,13 @@
+.main {
+    color: darkolivegreen;
+}
+
+.main1 {
+    color: steelblue;
+}
+
+.main2 li {
+    text-align: left;
+    color: darkgreen;
+    padding: 20px;
+}

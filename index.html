@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>To do list</title>
+</head>
+
+<body>
+    <div class="container text-center mt-5">
+
+        <h1 class="py-4 main">Adding Task To Calender</h1>
+        <div class="py-4">
+            <form onsubmit="return addTask()">
+                <label for="task" class="main1">Task:</label>
+                <input type="text" id="task" name="task" autocomplete="off" onfocus="this.value=''" required>
+                <label for="date" class="main1"> Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit" class="btn btn-outline-success" value="Add task">Add Task</button>
+            </form>
+        </div>
+        <div class="row py-4">
+            <div class="col-md-4">
+                <h2 class="main">Today's tasks</h2>
+                <ul id="todayTasks" class="main2"></ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="main">Tomorrow's tasks</h2>
+                <ul id="tomorrowTasks" class="main2"></ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="main">Future tasks</h2>
+                <ul id="futureTasks" class="main2"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function test() {
+            var list = document.getElementById("todayTasks")
+            var list2 = document.getElementById("tomorrowTasks")
+            var list3 = document.getElementById("futureTasks")
+
+            if (list.innerHTML == "") {
+                list.parentElement.style.display = "none"
+            }
+            else {
+                list.parentElement.style.display = "block"
+            }
+
+            if (list2.innerHTML == "") {
+                list2.parentElement.style.display = "none"
+            }
+            else {
+                list2.parentElement.style.display = "block"
+            }
+
+            if (list3.innerHTML == "") {
+                list3.parentElement.style.display = "none"
+            }
+            else {
+                list3.parentElement.style.display = "block"
+            }
+        }
+        test()
+        function addTask() {
+            var task = document.getElementById("task").value;
+            var date = new Date(document.getElementById("date").value);
+            var today = new Date();
+            var tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+            //it dispalys todays task//
+            if (date.getDate() === today.getDate()) {
+                document.getElementById("todayTasks").innerHTML += "<li>" + task + "(" + date.toDateString() + ")</li>";
+                //it dispalys tomorrow task//
+            }
+            else if (date.getDate() === tomorrow.getDate()) {
+                document.getElementById("tomorrowTasks").innerHTML += "<li>" + task + "(" + date.toDateString() + ")</li>";
+                //it dispalys future tasks//
+            }
+            else {
+                document.getElementById("futureTasks").innerHTML += "<li>" + task + " (" + date.toDateString() + ")</li>";
+            }
+            test()
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>
