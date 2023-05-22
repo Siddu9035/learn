@@ -1,9 +1,27 @@
+body {
+    background-color: lightgreen;
+}
 .demo {
     padding: 5px;
     margin-top: 20px;
+    border-radius: 10px;
 }
 .demo1 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
+    border-radius: 10px;
+}
+.demo2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+      color: darksalmon;
+      border-radius: 10px;
+}
+.demo3 {
+    border: 2px solid;
+    border-color: rgb(218, 87, 44);
+    box-sizing: border-box;
+    border-radius: 10px;
 }
