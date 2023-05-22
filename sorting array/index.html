@@ -33,7 +33,7 @@
         const resultDescending = document.getElementById("resultDescending");
 
         array.addEventListener("submit", (e) => {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); // Prevents form automatic form submission 
             const inputArray = arrayInput.value.split(" ");
             arrayDisplay.textContent = "Array: " + inputArray.join(", ");
         });
