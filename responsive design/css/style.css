@@ -1,0 +1,48 @@
+h1 {font-size:52px;line-height: 64px;font-family: 'ProductSans-Bold';}
+h2 {font-size:40px;line-height: 1.26;font-family: 'ProductSans-Bold';}
+h3 {font-size:32px;line-height: 1.26;font-family: 'ProductSans-Bold';}
+h4 {font-size:24px;line-height: 1.26;font-family: 'ProductSans-Bold';}
+h5 {font-size:20px;line-height: 1.26;font-family: 'ProductSans-Bold';}
+h6 {font-size:16px;line-height: 1.26;font-family: 'ProductSans-Bold';}
+p {font-size:16px;line-height: 1.26;font-family: 'ProductSans-Regular';}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    
+    padding: 10px;
+  }
+.demo {
+    justify-content: right;
+    justify-items: center;
+}
+
+.demo ul li {
+    padding: 10px 20px 10px 20px;
+}
+
+.demo ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.demo ul li a:hover {
+    background-color: #555;
+}
+.back {
+    background-image:url(/images/photo-1454496522488-7a8e488e8606.jpeg);
+    background-size: cover;
+    /* opacity: 0.5; */
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.imag1 {
+    opacity: 0.8;
+}

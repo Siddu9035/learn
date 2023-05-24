@@ -14,11 +14,15 @@
     <div class="container text-center">
         <form id="array">
             <h1 class="demo2">Sorting array</h1>
+            
             <div id="arrayDisplay" class="demo1"></div>
+
             <input type="text" id="inputArray" placeholder="Enter the value" autocomplete="off" class="demo3">
-            <button class="btn btn-outline-success demo1" onclick="sortArray()">Sort Array</button><br>
+            <button class="btn btn-outline-success demo1" onclick="sortArray()">Add Elements</button><br>
+
             <button type="button" id="sortedArray" class="btn btn-outline-success demo">Sort Ascending</button>
             <div id="resultAscending" class="demo"></div> <br>
+
             <button type="button" id="descending" class="btn btn-outline-success demo">Sort Descending</button>
             <div id="resultDescending" class="demo"></div>
         </form>
@@ -32,32 +36,34 @@
         let resultAscending = document.getElementById("resultAscending");
         let resultDescending = document.getElementById("resultDescending");
 
+        //creating array and displaying the array 
+        var dataarr = [];
+
         array.addEventListener("submit", (e) => {
-            e.preventDefault(); // Prevents form automatic form submission 
-            const inputArray = arrayInput.value.split(" ");
-            arrayDisplay.textContent = "Array: " + inputArray.join(", ");
+            e.preventDefault();
+            dataarr.push(arrayInput.value)
+            arrayDisplay.textContent = "Array Elements: " + dataarr.toString();
+            inputArray.value = ""
         });
 
+        ascendingbtn.addEventListener("click", () => {
+            sortArrayAscending();
+        });
 
-        // Sort Array
+        descendingbtn.addEventListener("click", () => {
+            sortArrayDescending();
+        });
 
-        function sortArray() {
-            let arrayInput = document.getElementById("inputArray");
-            let array = arrayInput.value.split(',').map(Number); // Spliting the  input by comma and convert to numbers
-            ascendingbtn.addEventListener("click", () => {
-                let sortedArray = array.sort(function (a, b) {
-                    return a - b;
-                });
-                resultAscending.textContent = "Sorted Array: " + sortedArray.join(", ");
-            });
-            descendingbtn.addEventListener("click", () => {
-                let descending = array.sort(function (a, b) {
-                    return b - a;
-                });
-                resultDescending.textContent = "Sorted Array: " + descending.join(", ");
-            });
-
+        function sortArrayAscending() {
+            let sortedArray = dataarr.slice().sort((a, b) => a - b);
+            resultAscending.textContent = "Ascending order : " + sortedArray.join(", ");
         
+        }
+
+        function sortArrayDescending() {
+            let sortedArray = dataarr.slice().sort((a, b) => b - a);
+            resultDescending.textContent = "Descending order : " + sortedArray.join(", ");
+    
         }
 
     </script>

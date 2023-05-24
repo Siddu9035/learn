@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>sorting array</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <form id="array">
+            <h1 class="demo2">Sorting array</h1>
+            <div id="arrayDisplay" class="demo1"></div>
+            <input type="text" id="inputArray" placeholder="Enter the value" autocomplete="off" class="demo3">
+            <button class="btn btn-outline-success demo1" onclick="sortArray()">Add Array</button><br>
+            <button type="button" id="increasingorder" class="btn btn-outline-success demo">Increasing Order</button>
+            <div id="resultincreasing" class="demo"></div> <br>
+            <button type="button" id="decreasingorder" class="btn btn-outline-success demo">Decreasing Order</button>
+            <div id="resultdescending" class="demo"></div>
+        </form>
+    </div>
+    <script>
+        let array = document.getElementById("array");
+        let arrayInput = document.getElementById("inputArray");
+        let arrayDisplay = document.getElementById("arrayDisplay");
+        let increasingbtn = document.getElementById("increasingorder");
+        let decreasingbtn = document.getElementById("decreasingorder");
+        let resultIncreasing = document.getElementById("resultincreasing");
+        let resultDecreasing = document.getElementById("resultdescending");
+
+        array.addEventListener("submit", (e) => {
+            e.preventDefault(); // Prevents form automatic form submission 
+            const inputArray = arrayInput.value.split(" ");
+            arrayDisplay.textContent = "Array: " + inputArray.join(", ");
+        });
+
+
+        // Sort Array
+
+        function sortArray() {
+            let arrayInput = document.getElementById("inputArray");
+            let array = arrayInput.value;
+            let inputArray = array.split(',');
+            let increasingorder = inputArray.map(function (num) {
+                return parseInt(num)
+            });
+            // Spliting the  input by comma and convert to numbers
+            // let array = arrayInput.map(number); 
+            //     return parseInt(number);
+
+            increasingbtn.addEventListener("click", () => {
+                increasingorder.sort(function (a, b) {
+                    return a - b;
+                });
+                resultIncreasing.textContent = "Sorted Array: " + increasingorder.join(", ");
+            });
+            let decreasingorder = inputArray.map(function (num) {
+                return parseInt(num)
+            });
+            decreasingbtn.addEventListener("click", () => {
+                decreasingorder.sort(function (a, b) {
+                    return b - a;
+                });
+                resultDecreasing.textContent = "Sorted Array: " + decreasingorder.join(", ");
+            });
+
+        }
+
+
+    </script>
+</body>
+
+</html>
