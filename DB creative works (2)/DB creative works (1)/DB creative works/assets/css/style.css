@@ -1,0 +1,280 @@
+/*====================================== reset.css is here ========================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+*:after,
+*:before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+abbr,
+acronym {
+    border: 0;
+}
+
+.clear {
+    clear: both;
+    font-size: 1px;
+    line-height: 1px;
+    display: block;
+    height: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.last {
+    margin: 0 !important;
+}
+
+.pad_last {
+    padding: 0 !important;
+}
+
+.no_bg {
+    background: none !important;
+}
+
+.no_bor {
+    border: 0 none !important;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer,
+hgroup,
+figure {
+    display: block;
+}
+
+/**************************************************************************************/
+a {
+    color: #000;
+    text-decoration: none;
+    outline: 0 none !important;
+}
+
+a:hover,
+a:focus {
+    color: #000;
+    text-decoration: none;
+    outline: 0 none !important;
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 64px;
+    font-family: 'ProductSans-Bold';
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 1.26;
+    font-family: 'ProductSans-Bold';
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 1.26;
+    font-family: 'ProductSans-Bold';
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 1.26;
+    font-family: 'ProductSans-Bold';
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 1.26;
+    font-family: 'ProductSans-Bold';
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 1.26;
+    font-family: 'ProductSans-Bold';
+}
+
+/*---------------------------------------------------*/
+
+
+body {
+    color: #383E41;
+    font-size: 16px;
+    background-color: #fff;
+    width: 100% !important;
+    font-family: 'ProductSans';
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+section {
+    padding: 10px;
+}
+/*-----------LayOut Start here-----------------------*/
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    ;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 16px;
+    color: #383E41;
+    font-family: 'ProductSans';
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.demo {
+    justify-content: right;
+    justify-items: center;
+    
+}
+.demo ul {
+    align-items: center;
+}
+.demo ul li {
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.demo ul li a {
+    display: block;
+    /* padding: 10px 20px; */
+    
+    color: #fff;
+    text-decoration: none;
+}
+/* .hamburg-menu {
+    background-image: url(../images/menu.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+} */
+.demo1 {
+    color: #003BC0;
+    
+}
+.demo2 {
+    color: #454545;
+}
+.demo3 {
+    color: #454545;
+    align-items: center;
+    text-align: center;
+}
+.main2 {
+    padding: 45px 10px 45px 10px;
+    /* width: auto;
+    height: 200px; */
+    /* align-items: center; */
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+.main3 {
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2)
+}
+div.cardcontainer {
+    background-color: #F7F7F7;
+}
+.main4 {
+    width: auto;
+    height: 200px;
+    /* padding: 0 60px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main5 {
+    display: flex;
+}
+.main6 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main7 {
+    background-color: #454545;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 200px; */
+}
+.main8 {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+.main9 {
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 30px;
+}
