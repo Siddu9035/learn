@@ -269,12 +269,14 @@ div.cardcontainer {
 .main8 {
     width: 100%;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
+    padding-top: 96px;
 }
 .main9 {
     color: #FFFFFF;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 85px;
+    padding-bottom: 48px;
+}
+.imag {
+    height: 53px;
 }
