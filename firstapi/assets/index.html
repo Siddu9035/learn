@@ -30,7 +30,7 @@
                 function renderData(users) {
                     const row = document.createElement("div");
                     row.classList.add("row");
-
+                  //creating the elements which are required
                     users.forEach((user) => {
                         const card = document.createElement("div");
                         const cardCol = document.createElement("div");
@@ -40,6 +40,7 @@
                         const email = document.createElement("h5");
                         const id = document.createElement("h5");
 
+                        //creating classes for each data 
                         card.classList.add("card");
                         cardCol.classList.add("col-md-4");
                         avatar.classList.add("card__avatar");
@@ -47,7 +48,7 @@
                         lastName.classList.add("card__name");
                         email.classList.add("card__email");
                         id.classList.add("card__id");
-
+                      // creating an user object and displaying screen 
                         avatar.src = user.avatar;
                         firstName.innerText = `First Name: ${user.first_name}`;
                         lastName.innerText = `Last Name: ${user.last_name}`;
@@ -55,7 +56,7 @@
                         id.innerText = `ID: ${user.id}`;
 
                         card.addEventListener("click", () => handleCardClick(user));
-
+                      //card element, appends child elements to it,
                         card.appendChild(avatar);
                         card.appendChild(firstName);
                         card.appendChild(lastName);
