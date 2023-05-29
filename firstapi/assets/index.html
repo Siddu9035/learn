@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>fectch api and show in cards</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="cards-container"></div>
-
     <script>
-        ///fetch and check the api
-        fetch('https://reqres.in/api/users?page=2')
-            .then(response => response.json())
-            .then(data => {
-                const cardsContainer = document.getElementById('cards-container');
-                console.log(data);
-                console.log(data.data);
-                ///// writing the function for api
-                function renderdata(data) {
-                    data.forEach(datas => {
-                        const div = document.createElement('div');
-                        const avatar = document.createElement('img');
-                        const first_name = document.createElement('h4');
-                        const last_name = document.createElement('h4');
-                        const email = document.createElement('h4');
-                        const id = document.createElement('h4');
+        // first store card data 
+        let selectedCardData = null;
+        
+        //function for handleclick 
+        function handleCardClick(cardData) {
+            localStorage.setItem("selectedCard", JSON.stringify(cardData));
+            // Redirect to the next screen
+            window.location.href = "next_screen.html";
+        }
 
+        fetch("https://reqres.in/api/users?page=2")
+            .then((response) => response.json())
+            .then((data) => {
+                const cardsContainer = document.getElementById("cards-container");
 
+                function renderData(users) {
+                    const row = document.createElement("div");
+                    row.classList.add("row");
 
-                        //////add styling if u want
-                        div.classList.add('card');
-                        avatar.classList.add('card__avatar');
-                        first_name.classList.add('card__name');
-                        last_name.classList.add('card__name');
-                        email.classList.add('card__email');
-                        id.classList.add('card__id');
+                    users.forEach((user) => {
+                        const card = document.createElement("div");
+                        const cardCol = document.createElement("div");
+                        const avatar = document.createElement("img");
+                        const firstName = document.createElement("h5");
+                        const lastName = document.createElement("h5");
+                        const email = document.createElement("h5");
+                        const id = document.createElement("h5");
 
+                        card.classList.add("card");
+                        cardCol.classList.add("col-md-4");
+                        avatar.classList.add("card__avatar");
+                        firstName.classList.add("card__name");
+                        lastName.classList.add("card__name");
+                        email.classList.add("card__email");
+                        id.classList.add("card__id");
 
-                        ////get the data using dot notation
-                        avatar.src = datas.avatar
-                        first_name.innerText = `first_name: ${datas.first_name}`;
-                        last_name.innerText = `last_name: ${datas.last_name}`;
-                        email.innerText = `email: ${datas.email}`;
-                        id.innerText = `id: ${datas.id}`;
+                        avatar.src = user.avatar;
+                        firstName.innerText = `First Name: ${user.first_name}`;
+                        lastName.innerText = `Last Name: ${user.last_name}`;
+                        email.innerText = `Email: ${user.email}`;
+                        id.innerText = `ID: ${user.id}`;
 
-                        ///printing the elements in-order
-                        div.appendChild(avatar);
-                        div.appendChild(first_name);
-                        div.appendChild(last_name);
-                        div.appendChild(email);
-                        div.appendChild(id);
-                        cardsContainer.appendChild(div);
+                        card.addEventListener("click", () => handleCardClick(user));
 
+                        card.appendChild(avatar);
+                        card.appendChild(firstName);
+                        card.appendChild(lastName);
+                        card.appendChild(email);
+                        card.appendChild(id);
+                        cardCol.appendChild(card);
+                        row.appendChild(cardCol);
                     });
+
+                    cardsContainer.appendChild(row);
                 }
-                renderdata(data.data);
+
+                renderData(data.data);
             });
 
     </script>
 </body>
-
 </html>
