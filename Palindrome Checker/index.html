@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Palindrome Checker</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center mt-5">
+            <input type="text" placeholder="Enter string" id="inputString" class="demo">
+            <button type="submit" onclick="checkPalindrome()" class="btn btn-secondary">Check</button><br>
+            <code id="result" class=""></code>
+        </div>
+    </div>
+    <script>
+        function checkPalindrome() {
+            ///take input from the user
+
+            let input = document.getElementById('inputString').value;
+
+            // converting string to an array
+            const arrayValues = input.split('');
+
+            // reverseing the array values
+            const reverseArrayValues = arrayValues.reverse();
+
+            // convert array to string
+            const reverseString = reverseArrayValues.join('');
+
+            if (input == reverseString) {
+                document.getElementById('result').innerHTML = 'It is a palindrome';
+                // console.log('It is a palindrome');
+            }
+            else {
+                document.getElementById('result').innerHTML = 'It is not a palindrome';
+                // console.log('It is not a palindrome');
+            }
+        }
+    </script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery-3.4.1.js"></script>
+</body>
+
+</html>

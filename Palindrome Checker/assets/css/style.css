@@ -1,0 +1,19 @@
+.demo {
+    border: 2px solid;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+    width: 300px;
+    box-sizing: border-box;
+    border-color: teal;
+}
+.demo:focus {
+    border-color: teal;
+}
+.btn {
+    border: 2px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-color: teal;
+    padding: 10px;
+}

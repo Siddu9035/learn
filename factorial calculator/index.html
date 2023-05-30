@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>factorial number</title>
+</head>
+
+<body>
+    <div class="text-center mt-5">
+        <input type="text" placeholder="Enter The Number" id="numberinput" class="demo" novalidate="novalidate">
+        <button type="button" onclick="calculateFactorial()" class="btn btn-outline-success">Find</button>
+
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculateFactorial() {
+            const num = parseInt(document.getElementById("numberinput").value);
+
+            function factorialIterative(num) {
+                let result = 1;
+                for (let i = 1; i <= num; i++) {
+                    result *= i;
+                }
+                return result;
+            }
+            const result = factorialIterative(num);
+            document.getElementById("result").textContent = "factorial of " + num + "is : " + result;
+        }
+    </script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery-3.4.1.js"></script>
+</body>
+
+</html>
